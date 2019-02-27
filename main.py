@@ -5,7 +5,7 @@ from bigChungus import BigPizza
 
 def main():
     # input data
-    with open('d_big.in', 'r') as f:
+    with open('a_example.in', 'r') as f:
         line_one = f.readline().split()
         R = line_one[0]
         C = line_one[1]
