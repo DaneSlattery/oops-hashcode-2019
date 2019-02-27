@@ -1,3 +1,4 @@
 class cell:
-    type = ''
-    belongsToSlice = False
+    def __init__(self):
+        self.type = ''
+        self.belongsToSlice = False
