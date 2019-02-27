@@ -1,0 +1,3 @@
+hashcode judge website: https://hashcodejudge.withgoogle.com/#/home
+
+github: https://github.com/DaneSlattery/oops-hashcode-2019
