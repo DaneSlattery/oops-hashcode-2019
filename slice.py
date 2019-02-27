@@ -53,3 +53,43 @@ class slice:
             return True
         else:
             return False
+
+    def coordIntersects(self, x, y):
+        if x <= self.end_x and x >= self.start_x and y <= self.end_y and y >= self.start_y:
+            return True
+        else:
+            return False
+
+    def borderingPoints(self, maxX, maxY):
+        points = list()
+        # Add all points above and below the slice
+        for x in range(self.start_x - 1, self.end_x + 2):
+            if x >= 0 and x <= maxX:
+                if self.start_y - 1 >= 0:
+                    points.append((x, self.start_y - 1))
+                if self.end_y + 1 <= maxY:
+                    points.append((x, self.end_y + 1))
+
+        # Add all points to the left and right but not above or below the slice
+        for y in range(self.start_y, self.end_y + 1):
+            if self.start_x - 1 >= 0:
+                points.append((self.start_x - 1, y))
+            if self.end_x + 1 <= maxX:
+                points.append((self.end_x + 1, y))
+
+        return points
+
+
+def borderingPointsFor(slices, maxX, maxY):
+    allPoints = set()
+    for s in slices:
+        for p in s.borderingPoints(maxX, maxY):
+            allPoints.add(p)
+
+    allPoints = filter(lambda x: all(not s.coordIntersects(
+        x[0], x[1]) for s in slices), allPoints)
+
+    output = set()
+    for x in allPoints:
+        output.add(x)
+    return output
