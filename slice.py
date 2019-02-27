@@ -54,6 +54,8 @@ class slice:
         else:
             return False
 
+    def outputSlice(self):
+      return(''+str(self.start_x)+ ' ' + str(self.start_y)+ ' ' + str(self.end_x)+ ' ' +str(self.end_y))
     def coordIntersects(self, x, y):
         if x <= self.end_x and x >= self.start_x and y <= self.end_y and y >= self.start_y:
             return True
