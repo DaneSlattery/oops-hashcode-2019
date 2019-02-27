@@ -28,6 +28,11 @@ def main():
 
             for j in range(int(C)):
                 BigPizza[i][j].ingredient = chararray[j]
+        
+        for row in BigPizza:
+            for x in row:
+                print(x, end="")
+            print()
 
     f.closed
 
