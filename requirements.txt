@@ -1,0 +1,6 @@
+# PIP Requirements.txt to install dependencies.
+# It is advised you run the following command in a virtual environment (virtualenv for python3)
+# ```pip install -r requirements.txt```
+#
+# To update the requirements.txt, analyse the output of ```pip freeze``` to see the new dependencies
+#   you need to add to this file.
