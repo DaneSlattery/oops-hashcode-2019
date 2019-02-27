@@ -4,7 +4,6 @@ from bigChungus import BigPizza
 
 
 def main():
-
     # input data
     with open('a_example.in', 'r') as f:
         line_one = f.readline().split()
@@ -12,6 +11,8 @@ def main():
         C = line_one[1]
         L = line_one[2]
         H = line_one[3]
+
+        BigPizza = [[cell('', False) for j in range(int(C))] for i in range(int(R))]
 
         print('Rows: ' + R)
         print('Columns: ' + C)
@@ -25,10 +26,11 @@ def main():
             line = f.readline()
             chararray = list(line.strip('\n'))
 
-            for char in chararray:
-                BigPizza.append(cell(char, False))
+            for j in range(int(C)):
+                BigPizza[i][j].ingredient = chararray[j]
 
     f.closed
+
 
 
 if __name__ == '__main__':
