@@ -53,3 +53,6 @@ class slice:
             return True
         else:
             return False
+
+    def outputSlice(self):
+      return(''+str(self.start_x)+ ' ' + str(self.start_y)+ ' ' + str(self.end_x)+ ' ' +str(self.end_y))
