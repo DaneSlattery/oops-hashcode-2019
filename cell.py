@@ -6,6 +6,10 @@ class cell:
         self.ingredient = ingredient
         self.belongsToSlice = belongsToSlice
         
+        
+    def __str__(self):
+        return str(self.ingredient) + ',' + str(int(self.belongsToSlice)) + ' ' 
+        
     def setBelongsToSlice(self):
         if ~(self.belongsToSlice):
             self.belongsToSlice = true
