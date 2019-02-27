@@ -4,6 +4,9 @@ from bigChungus import BigPizza
 
 
 def main():
+    sliceList = []
+    numSlices = 0
+
     # input data
     with open('a_example.in', 'r') as f:
         line_one = f.readline().split()
@@ -12,7 +15,8 @@ def main():
         L = line_one[2]
         H = line_one[3]
 
-        BigPizza = [[cell('', False) for j in range(int(C))] for i in range(int(R))]
+        BigPizza = [[cell('', False) for j in range(int(C))]
+                    for i in range(int(R))]
 
         print('Rows: ' + R)
         print('Columns: ' + C)
@@ -36,6 +40,19 @@ def main():
 
     f.closed
 
+    # output data
+    with open('a_example.out', 'w') as out:
+        out.write(str(numSlices) + '\n')
+        s = slice()
+        s.start_x=0
+        s.start_y=0
+        s.end_x=2
+        s.end_y=1
+        sliceList.append(s)
+        for x in sliceList:
+            out.write(x.outputSlice()+'\n')
+            #print(x.outputSlice())
+    out.closed
 
 
 if __name__ == '__main__':
